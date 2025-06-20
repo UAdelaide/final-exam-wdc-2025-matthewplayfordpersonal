@@ -85,9 +85,11 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
+  // check if user has a session
   const userId = req.session.user_id;
   if (!userId) return res.status(401).json({ error: 'Not logged in' });
 
+  // find any dogs associated with user
   const [rows] = await db.query(`
     SELECT dog_id, name FROM Dogs WHERE owner_id = ?
     `, [userId]);
