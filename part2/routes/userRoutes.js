@@ -86,7 +86,9 @@ router.post('/logout', async (req, res) => {
 
 router.get('/mydogs', async (req, res) => {
   const userId = req.session.user_id;
-  
+  if (!userId) return res.status(401).json({ error: 'Not logged in' });
+
+  const [rows] = db.execute()
 })
 
-module.exports = rou
+module.exports = router;
