@@ -176,7 +176,7 @@ function downvote(index) {
 
 async function login(){
     let user = {
-        user: document.getElementById('username').value,
+        username: document.getElementById('username').value,
         pass: document.getElementById('password').value
     };
     console.log(user);
