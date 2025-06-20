@@ -181,11 +181,12 @@ async function login(){a
         pass: document.getElementById('password').value
     };
 
-    const res = fetch('/users/login', {
+    const res = await fetch('/users/login', {
         method: 'POST',
         body: JSON.stringify(user)
     });
 
+    const data = await res.json()
 
 }
 
