@@ -128,8 +128,8 @@ CREATE TABLE WalkRatings (
             `)
 
     // Insert data if table is empty
-    const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-      await db.execute(`
+    const arr = [
+
 INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'carol@example.com', 'hashed789', 'owner');
@@ -147,8 +147,9 @@ INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, st
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-13 13:00:00', 60, 'Magill', 'open' FROM Dogs WHERE name = 'Jacob';
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-12 18:45:00', 75, 'Campbelltown', 'open' FROM Dogs WHERE name = 'Joe';
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-11 06:00:00', 90, 'Norwood', 'cancelled' FROM Dogs WHERE name = 'Jim';
+    ]
+      await db.execute(`
       `);
-    }
   } catch (err) {
     console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
   }
