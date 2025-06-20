@@ -53,7 +53,6 @@
     createApp({
       data() {
         let dogs = ref([]);
-      onMounted(async () => {
         async function getDogs() {
           try {
             const res = await fetch('/api/walks/dogs');
@@ -62,6 +61,8 @@
             error.value = 'Failed to load walk requests';
           }
         }
+      onMounted(async () => {
+        getDogs();
       });
         return {
           message: 'Welcome to the Dog Walking Service!',
