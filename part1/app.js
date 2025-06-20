@@ -83,7 +83,7 @@ CREATE TABLE Dogs (
     size ENUM('small', 'medium', 'large') NOT NULL,
     FOREIGN KEY (owner_id) REFERENCES Users(user_id)
 );
-      `)
+      `);
 
       await db.execute(`
 CREATE TABLE WalkRequests (
@@ -96,7 +96,7 @@ CREATE TABLE WalkRequests (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (dog_id) REFERENCES Dogs(dog_id)
 );
-        `)
+        `);
 
         await db.execute(`
 CREATE TABLE WalkApplications (
@@ -109,7 +109,7 @@ CREATE TABLE WalkApplications (
     FOREIGN KEY (walker_id) REFERENCES Users(user_id),
     CONSTRAINT unique_application UNIQUE (request_id, walker_id)
 );
-          `)
+          `);
 
           await db.execute(`
 CREATE TABLE WalkRatings (
@@ -125,7 +125,7 @@ CREATE TABLE WalkRatings (
     FOREIGN KEY (owner_id) REFERENCES Users(user_id),
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );
-            `)
+            `);
 
             // this was so annoying
     const arr = [
