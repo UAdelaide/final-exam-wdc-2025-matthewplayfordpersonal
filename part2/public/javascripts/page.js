@@ -189,7 +189,7 @@ async function login(){a
     const data = await res.json();
 
     if (data.user.role === 'owner') {
-        
+        window.location.href = '/owner-dashboard.html';
     }
 }
 
