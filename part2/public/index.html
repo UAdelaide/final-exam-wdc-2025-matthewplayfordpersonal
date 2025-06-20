@@ -65,6 +65,8 @@
             'Content-Type': 'application/json'
             }
           })
+          const data = await res.json();
+          const res2 = await fetch('https://dog.ceo/api/breeds/image/random')
             dogs.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
