@@ -179,6 +179,7 @@ async function login(){
         user: document.getElementById('username').value,
         pass: document.getElementById('password').value
     };
+    console.log(user);
 
     const res = await fetch('/api/users/login', {
         method: 'POST',
