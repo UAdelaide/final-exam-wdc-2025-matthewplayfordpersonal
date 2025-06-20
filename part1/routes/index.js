@@ -32,7 +32,7 @@ let db;
 
 router.get('/api/dogs', async function(req, res, next) {
   try {
-    const [rows] = await db.execute()
+    const [rows] = await db.execute('S')
   } catch (error) {
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
