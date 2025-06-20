@@ -37,6 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
+  // get the neccessary variables from the request body
   const { username, password } = req.body;
 
   const [h] = await db.query(`SELECT * FROM Users`);
