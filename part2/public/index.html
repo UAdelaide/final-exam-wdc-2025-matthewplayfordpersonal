@@ -66,13 +66,15 @@
             }
           })
           const data = await res.json();
+
           const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
-          console.log(data, data2)
           const data2 = await res.json();
-            dogs.value = {
-              ...data,
-              img: data2.message,
-            };
+          console.log(data, data2)
+
+          dogs.value = {
+            ...data,
+            img: data2.message,
+          };
           } catch (err) {
             console.log(err)
             error.value = 'Failed to load walk requests';
