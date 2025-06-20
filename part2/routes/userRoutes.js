@@ -65,7 +65,28 @@ router.post('/login', async (req, res) => {
 });
 
 router.post('/logout', async (req, res) => {
-  
+  try {
+    // check if matching user exists
+    const [rows] = await db.query(`
+      SELECT user_id, username, role FROM Users
+      WHERE username = ? AND password_hash = ?
+    `, [username, password]);
+
+    // if one does not, return 401
+    if (rows.length === 0) {
+      return res.status(401).json({ error: 'Invalid credentials' });
+    }
+
+    // create session for user and keep track of their user_id
+    req.session.user_id = rows[0].user_id;
+
+    // if one does, return success
+    res.json({ message: 'Login successful', user: rows[0] });
+  } catch (error) {
+    // catch any errors
+    console.error(error);
+    res.status(500).json({ error: 'Login failed' });
+  }
 })
 
 module.exports = router;
