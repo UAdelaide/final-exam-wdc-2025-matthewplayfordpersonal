@@ -225,8 +225,8 @@ async function logout(){
 
 async function getDogs(){
     // create the fetch request to the login api
-    const res = await fetch('/api/users/logout', {
-        method: 'POST',
+    const res = await fetch('/api/users/getdogs', {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         }
