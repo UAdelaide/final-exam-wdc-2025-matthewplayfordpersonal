@@ -33,6 +33,7 @@ router.get('/api/open', async function(req, res, next) {
     const [rows] = await db.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_minutes, WalkRequests.location, Users.username AS owner_username FROM WalkRequests WHERE WalkRequests.status = 'open' JOIN Dogs ON Dogs.dog_id = WalkRequests.dog_id JOIN Users ON Users.user_id = Dogs.owner_id;`);
     res.json(rows);
   } catch (error) {
+    console.log(error);
     res.json({ error: error });
   }
 });
