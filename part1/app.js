@@ -37,6 +37,8 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+let db;
+
 (async () => {
   try {
     // Connect to MySQL without specifying a database
@@ -55,7 +57,7 @@ app.use(function(err, req, res, next) {
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'testdb'
+      database: 'part1'
     });
 
     // Create a table if it doesn't exist
