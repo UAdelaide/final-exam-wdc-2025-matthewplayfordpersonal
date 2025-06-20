@@ -174,8 +174,7 @@ function downvote(index) {
 }
 
 
-async function login(){a
-
+async function login(){
     let user = {
         user: document.getElementById('username').value,
         pass: document.getElementById('password').value
@@ -193,7 +192,9 @@ async function login(){a
         } else if (data.user.role) {
             window.location.href = '/walker-dashboard.html';
         }
-    } else 
+    } else {
+        alert('login failed');
+    }
 }
 
 function logout(){
