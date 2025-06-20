@@ -40,15 +40,14 @@ router.post('/login', async (req, res) => {
   // get the neccessary variables from the request body
   const { username, password } = req.body;
 
-  const [h] = await db.query(`SELECT * FROM Users`);
-  console.log(req.body);
-
   try {
+    // check if matching user exists
     const [rows] = await db.query(`
       SELECT user_id, username, role FROM Users
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
+    // if one does, 
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
