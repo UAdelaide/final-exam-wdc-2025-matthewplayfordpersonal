@@ -40,7 +40,7 @@ router.get('/api/open', async function(req, res, next) {
 
 router.get('/api/summary', async function(req, res, next) {
   try {
-    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) FROM Users JOIN WalkRatings ON WalkRatings.walker_id = Users.user_id JOIN WalkApplications ON WalkApplications.walker_id = Users.user_id WHERE Users.role = 'Walker' AND WalkApplications.status = 'accepted';`);
+    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) FROM Users JOIN WalkRatings ON WalkRatings.walker_id = Users.user_id JOIN WalkApplications ON WalkApplications.walker_id = Users.user_id WHERE Users.role = 'Walker' AND WalkApplications.status = 'accepted' GROUP BY Users.;`);
   } catch (error) {
     console.log(error);
     res.json({ error: 'an error occurred' });
