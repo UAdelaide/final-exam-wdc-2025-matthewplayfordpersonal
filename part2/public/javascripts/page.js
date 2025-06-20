@@ -225,6 +225,6 @@ router.post('/logout', async (req, res) => {
   }
 });
 
-async function name(params) {
+async function getDogs() {
     
 }
