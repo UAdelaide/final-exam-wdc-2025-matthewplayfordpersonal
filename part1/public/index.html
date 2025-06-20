@@ -28,6 +28,7 @@
           "https://dog.ceo/dog-api/documentation/random"
         );
         const data = await response.json();
+        this.dogSrc = data
       },
     },
     mounted() {
