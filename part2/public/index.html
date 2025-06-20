@@ -45,7 +45,7 @@
           <td>{{ dog.size }}</td>
           <td>{{ dog.owner_username }}</td>
           <td>
-            <img src="https://dog.ceo/api/breeds/image/random" alt="dog" />
+            <img :src="dog.img" alt="dog" />
           </td>
         </tr>
       </tbody>
