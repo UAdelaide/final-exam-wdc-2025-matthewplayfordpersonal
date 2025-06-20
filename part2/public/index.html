@@ -30,9 +30,22 @@
       Log In
     </button>
 
-    <div style="display: flex; flex-direction: column;">
-      <img src="" />
-    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Dog Name</th>
+          <th>Size</th>
+          <th>Owner Username</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="dog in dogs" :key="dog.dog_id">
+          <td>{{ dog.dog_name }}</td>
+          <td>{{ dog.size }}</td>
+          <td>{{ dog.owner_username }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <script>
