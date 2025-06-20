@@ -222,21 +222,3 @@ async function logout(){
         alert('login failed');
     }
 }
-
-async function getDogs(){
-    // create the fetch request to the login api
-    const res = await fetch('/api/users/getdogs', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
-
-    // redirect to the respective page
-    if (res.ok) {
-        window.location.href = '/';
-    } else {
-        // handle incorrect login details
-        alert('login failed');
-    }
-}
