@@ -191,7 +191,7 @@ async function login(){
         })
     });
 
-    // redirect to the respective 
+    // redirect to the respective page
     if (res.ok) {
         const data = await res.json();
         if (data.user.role === 'owner') {
@@ -200,6 +200,7 @@ async function login(){
             window.location.href = '/walker-dashboard.html';
         }
     } else {
+        // handle incorrect login details
         alert('login failed');
     }
 }
