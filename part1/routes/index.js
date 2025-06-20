@@ -28,9 +28,9 @@ router.get('/api/dogs', async function(req, res, next) {
   }
 });
 
-router.get('/api/open', function(req, res, next) {
+router.get('/api/open', async function(req, res, next) {
   try {
-
+    const [rows] = await db.execute(`SELECT `)
   } catch (error) {
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
