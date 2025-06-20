@@ -182,7 +182,7 @@ async function login(){
         method: 'POST',
         body: {
             username: username,
-            password: password,
+            password: password
         }
     });
 
