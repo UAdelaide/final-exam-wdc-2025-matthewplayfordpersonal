@@ -98,4 +98,14 @@ router.get('/mydogs', async (req, res) => {
   res.json(rows);
 });
 
+router.get('/dogs', async function(req, res, next) {
+  try {
+    const [rows] = await db.execute('SELECT Dogs.name AS dog_name, size, Users.username AS owner_username FROM Dogs JOIN Users ON Users.user_id = Dogs.owner_id');
+    res.json(rows);
+  } catch (error) {
+    console.log(error);
+    res.json({ error: 'an error occurred' });
+  }
+});
+
 module.exports = router;
