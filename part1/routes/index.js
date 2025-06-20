@@ -7,10 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/dogs', function(req, res, next) {
+  try
   res.sendStatus(200);
 });
 
-router.get('/api/dogs', function(req, res, next) {
+router.get('/api/open', function(req, res, next) {
   res.sendStatus(200);
 });
 
