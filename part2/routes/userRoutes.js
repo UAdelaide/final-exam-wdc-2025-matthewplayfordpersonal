@@ -92,7 +92,7 @@ router.get('/mydogs', async (req, res) => {
   // find any dogs associated with user
   const [rows] = await db.query(`
     SELECT dog_id, name FROM Dogs WHERE owner_id = ?
-    `, [userId]);
+  `, [userId]);
 
   // return the list of dogs belonging to user
   res.json(rows);
