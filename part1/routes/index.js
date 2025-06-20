@@ -40,7 +40,7 @@ router.get('/api/open', async function(req, res, next) {
 
 router.get('/api/summary', async function(req, res, next) {
   try {
-    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) FROM Users JOIN WalkRatings ON WalkRatings.walker_id = Users.user_id JOIN WalkApplications ON WalkApplications.walker_id = Users.user_id WHERE Users.role = 'Walker' AND WalkApplications.status = 'accepted' GROUP BY walker_username;`);
+    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(DISTINCT WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) FROM Users LEFT JOIN WalkRatings ON WalkRatings.walker_id = Users.user_id JOIN WalkApplications ON WalkApplications.walker_id = Users.user_id WHERE Users.role = 'Walker' AND WalkApplications.status = 'accepted' GROUP BY walker_username;`);
     res.json(rows);
   } catch (error) {
     console.log(error);
