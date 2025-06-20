@@ -55,7 +55,12 @@
         let dogs = ref([]);
         async function getDogs() {
           try {
-            const res = await fetch('/api/users/dogs');
+            const res = await fetch('/api/users/dogs', {
+              method: 'GET',
+              constructor(params) {
+                
+              }
+            });
             dogs = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
