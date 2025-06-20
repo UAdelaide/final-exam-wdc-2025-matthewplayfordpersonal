@@ -183,7 +183,7 @@ async function login(){
 
     const res = await fetch('/api/users/login', {
         method: 'POST',
-        body: JSON.stringify(user)
+        body: JSON.stringify(...user)
     });
 
     if (res.ok) {
