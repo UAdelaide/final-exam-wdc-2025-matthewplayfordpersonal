@@ -30,7 +30,7 @@ router.get('/api/dogs', async function(req, res, next) {
 
 router.get('/api/open', async function(req, res, next) {
   try {
-    const [rows] = await db.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.`)
+    const [rows] = await db.execute(`SELECT WalkRequests.request_id, Dogs.name AS dog_name, WalkRequests.requested_time, WalkRequests.duration_`)
   } catch (error) {
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
