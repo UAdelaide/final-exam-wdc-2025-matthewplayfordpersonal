@@ -74,13 +74,6 @@ CREATE TABLE Users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE Dogs (
-    dog_id INT AUTO_INCREMENT PRIMARY KEY,
-    owner_id INT NOT NULL,
-    name VARCHAR(50) NOT NULL,
-    size ENUM('small', 'medium', 'large') NOT NULL,
-    FOREIGN KEY (owner_id) REFERENCES Users(user_id)
-);
 
 CREATE TABLE WalkRequests (
     request_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -118,6 +111,10 @@ CREATE TABLE WalkRatings (
     CONSTRAINT unique_rating_per_walk UNIQUE (request_id)
 );
     `);
+
+    await db.execute(`
+
+      `)
 
     // Insert data if table is empty
     const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
