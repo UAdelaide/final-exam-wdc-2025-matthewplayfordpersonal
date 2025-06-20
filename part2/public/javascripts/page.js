@@ -186,16 +186,14 @@ async function login(){a
         body: JSON.stringify(user)
     });
 
-    const data = await res.json();
-
     if (res.ok) {
-
-    }
-    if (data.user.role === 'owner') {
-        window.location.href = '/owner-dashboard.html';
-    } else if (data.user.role) {
-        window.location.href = '/walker-dashboard.html';
-    }
+        const data = await res.json();
+        if (data.user.role === 'owner') {
+            window.location.href = '/owner-dashboard.html';
+        } else if (data.user.role) {
+            window.location.href = '/walker-dashboard.html';
+        }
+    } else 
 }
 
 function logout(){
