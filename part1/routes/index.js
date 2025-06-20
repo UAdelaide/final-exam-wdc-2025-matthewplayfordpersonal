@@ -10,4 +10,12 @@ router.get('/api/dogs', function(req, res, next) {
   res.sendStatus(200);
 });
 
+router.get('/api/dogs', function(req, res, next) {
+  res.sendStatus(200);
+});
+
+router.get('/api/summary', function(req, res, next) {
+  res.sendStatus(200);
+});
+
 module.exports = router;
