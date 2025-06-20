@@ -45,13 +45,12 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        let user = undefined;
 
         async function getMe() {
           try {
             const res = await fetch('/api/users/me');
             if (!res.ok) throw new Error('Failed to load walk requests');
-            user = await res.json();
+            return await res.json();
           } catch (err) {
             error.value = err.message;
           }
