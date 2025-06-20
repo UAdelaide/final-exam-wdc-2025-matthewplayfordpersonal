@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>dog of the day</title>
-<script src="https://cdn.jsdelivr.net/npm/vue@3.5.17/dist/vue.global.min.js"></script>
-    </head>
-    <body>
-
-    </body>
+  <head>
+    <title>dog of the day</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.5.17/dist/vue.global.min.js"></script>
+  </head>
+  <body>
+    <h1>DOG OF THE DAY</h1>
+    <img :src="dogSrc" />
+    <div>
+      <p>Name: Jeff</p>
+      <p>Breed: Border Collie</p>
+      <p>Age: 6</p>
+    </div>
+  </body>
 </html>
+
+<script>
+  Vue.createApp({
+    data() {
+      return {
+        dogSrc: "",
+      };
+    },
+    methods: {
+      async getImage() {
+        const response = await fetch(
+          "https://dog.ceo/dog-api/documentation/random"
+        );
+        const data = await response.json();
+      },
+    },
+    mounted() {
+      this.getImage();
+    },
+  });
+</script>
