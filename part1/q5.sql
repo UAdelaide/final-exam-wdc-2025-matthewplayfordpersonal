@@ -10,8 +10,8 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Jim', 'medium' FROM Use
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Joe', 'large' FROM Users WHERE username = 'notjefforbob';
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Jacob', 'large' FROM Users WHERE email = 'bob@example.com';
 
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs WHERE name = 'Max';
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' FROM Dogs WHERE name = 'Bella';
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-13 13:00:00', 60, 'Magill', 'open' FROM Dogs WHERE name = 'Jacob';
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-12 18:45:00', 75, 'Campbelltown', 'open' FROM Dogs WHERE name = 'Joe';
-INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-11 06:00:00', 90, 'Norwood', 'cancelled' FROM Dogs WHERE name = 'Jim';
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs WHERE name = 'Max';
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted' FROM Dogs WHERE name = 'Bella';
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-13 13:00:00', 60, 'Magill', 'open' FROM Dogs WHERE name = 'Jacob';
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-12 18:45:00', 75, 'Campbelltown', 'open' FROM Dogs WHERE name = 'Joe';
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-11 06:00:00', 90, 'Norwood', 'cancelled' FROM Dogs WHERE name = 'Jim';
