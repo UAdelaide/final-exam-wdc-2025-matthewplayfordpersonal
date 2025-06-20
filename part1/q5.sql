@@ -4,4 +4,4 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'ca
 INSERT INTO Users (username, email, password_hash, role) VALUES ('jeffjeff', 'jeff@example.com', 'hashed91289219', 'owner');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('notjefforbob', 'jeff323@example.com', 'hello', 'walker');
 
-INSERT INTO Dogs (owner_id, name, size) VALUES (SELECT user_id FROM Users WHERE username = 'alice123', 'Max', 'medium');
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE username = 'alice123';
