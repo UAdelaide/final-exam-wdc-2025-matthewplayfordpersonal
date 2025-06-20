@@ -40,7 +40,7 @@ router.get('/api/open', async function(req, res, next) {
 
 router.get('/api/summary', async function(req, res, next) {
   try {
-    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) `)
+    const [rows] = await db.execute(`SELECT Users.username as walker_username, Count(WalkRatings.rating_id), AVG(WalkRatings.rating), Count(WalkApplications.application_id) JOIN WalkRatings`)
   } catch (error) {
     console.log(error);
     res.json({ error: 'an error occurred' });
