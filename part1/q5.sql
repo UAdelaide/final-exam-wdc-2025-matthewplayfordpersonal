@@ -10,4 +10,4 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Use
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE username = 'notjefforbob';
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE email = 'bob@example.com';
 
-INSERT INTIO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs 
+INSERT INTIO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs WHERE name = 'Max';
