@@ -71,6 +71,7 @@ router.post('/logout', async (req, res) => {
         res.json({ error: 'server error' });
       }
 
+      res.clearCookie('connect.sid');
       res.sendStatus(200);
     });
   } catch (error) {
