@@ -216,12 +216,7 @@ async function logout(){
 
     // redirect to the respective page
     if (res.ok) {
-        const data = await res.json();
-        if (data.user.role === 'owner') {
-            window.location.href = '/owner-dashboard.html';
-        } else if (data.user.role === 'walker') {
-            window.location.href = '/walker-dashboard.html';
-        }
+        window.location.href = '/';
     } else {
         // handle incorrect login details
         alert('login failed');
