@@ -58,7 +58,7 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'part1',
+      database: 'DogWalkService',
       multipleStatements: true,
     });
 
