@@ -47,6 +47,16 @@
         const error = ref('');
         const user = 3;
 
+        async function getMe() {
+          try {
+            const res = await fetch('/api/walks');
+            if (!res.ok) throw new Error('Failed to load walk requests');
+            walks.value = await res.json();
+          } catch (err) {
+            error.value = err.message;
+          }
+        }
+
         async function loadWalkRequests() {
           try {
             const res = await fetch('/api/walks');
