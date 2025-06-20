@@ -34,7 +34,7 @@ router.get('/api/open', async function(req, res, next) {
     res.json(rows);
   } catch (error) {
     console.log(error);
-    res.sendStatus(500).json({ error: 'an error occurred' });
+    res.json({ error: 'an error occurred' });
   }
 });
 
@@ -43,7 +43,7 @@ router.get('/api/summary', function(req, res, next) {
 
   } catch (error) {
     console.log(error);
-    res.sendStatus(500).json({ error: 'an error occurred' });
+    res.json({ error: 'an error occurred' });
   }
 });
 
