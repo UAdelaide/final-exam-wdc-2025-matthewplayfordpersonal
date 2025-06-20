@@ -183,6 +183,7 @@ async function login(){a
 
     const res = fetch('/users/login', {
         
+        body: JSON.stringify(user),
     });
 
 
