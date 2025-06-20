@@ -175,10 +175,8 @@ function downvote(index) {
 
 
 async function login(){
-    let user = {
-        username: document.getElementById('username').value,
-        password: document.getElementById('password').value
-    };
+    const username: document.getElementById('username').value,
+    const password: document.getElementById('password').value
     console.log(user);
 
     const res = await fetch('/api/users/login', {
