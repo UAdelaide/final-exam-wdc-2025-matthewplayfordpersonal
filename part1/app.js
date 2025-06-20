@@ -146,7 +146,7 @@ CREATE TABLE WalkRatings (
 `INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-13 13:00:00', 60, 'Magill', 'open' FROM Dogs WHERE name = 'Jacob'`,
 `INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-12 18:45:00', 75, 'Campbelltown', 'open' FROM Dogs WHERE name = 'Joe'`,
 `INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-11 06:00:00', 90, 'Norwood', 'cancelled' FROM Dogs WHERE name = 'Jim'`,
-    ]
+    ];
     for (const sql of arr) {
       await db.execute(sql);
     }
