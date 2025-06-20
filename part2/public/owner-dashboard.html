@@ -89,7 +89,7 @@
         const error = ref('');
 
         async function getMyDogs() {
-          const res = await fetch('/api/users/getdogs', {
+          const res = await fetch('/api/users/mydogs', {
             method: 'GET',
             headers: {
             'Content-Type': 'application/json'
