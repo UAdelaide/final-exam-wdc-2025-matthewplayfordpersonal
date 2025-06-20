@@ -32,7 +32,7 @@ let db;
 
 router.get('/api/dogs', async function(req, res, next) {
   try {
-    const [rows] = await db.execute('SELECT Dogs.name AS dog_name, size FROM Dogs JOIN Users ON Users.us')
+    const [rows] = await db.execute('SELECT Dogs.name AS dog_name, size, User FROM Dogs JOIN Users ON Users.user_id = Dogs.user_id')
   } catch (error) {
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
