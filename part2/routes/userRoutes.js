@@ -73,6 +73,7 @@ router.post('/logout', async (req, res) => {
         res.sendStatus(500);
       }
 
+      // clear the cookie and return a 200
       res.clearCookie('connect.sid');
       res.sendStatus(200);
     });
