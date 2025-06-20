@@ -67,6 +67,7 @@
           })
           const data = await res.json();
           const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
+          console.log(res2, data2)
           const data2 = await res.json();
             dogs.value = {
               ...data,
