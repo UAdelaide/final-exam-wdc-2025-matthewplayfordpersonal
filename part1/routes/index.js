@@ -30,14 +30,9 @@ let db;
   }
 })();
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
-
-router.get('/api/dogs', function(req, res, next) {
+router.get('/api/dogs', async function(req, res, next) {
   try {
-    const [rows] = 
+    const [rows] = await db.execute()
   } catch (error) {
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
