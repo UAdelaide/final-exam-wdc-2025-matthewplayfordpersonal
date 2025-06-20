@@ -4,4 +4,4 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'ca
 INSERT INTO Users (username, email, password_hash, role) VALUES ('jeffjeff', 'jeff@example.com', 'hashed91289219', 'owner');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('notjefforbob', 'jeff323@example.com', 'hello', 'walker');
 
-INSERT INTO Dogs ()
+INSERT INTO Dogs (owner_id, name, size)
