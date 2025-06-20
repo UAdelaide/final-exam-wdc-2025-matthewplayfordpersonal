@@ -180,6 +180,9 @@ async function login(){
 
     const res = await fetch('/api/users/login', {
         method: 'POST',
+        body: {
+            user
+        }
     });
 
     if (res.ok) {
