@@ -68,9 +68,9 @@ router.post('/logout', async (req, res) => {
   try {
     // attempt to destroy the session
     req.session.destroy((error) => {
-      // if there is an error
+      // if there is an error return a 500
       if (error) {
-        res.json({ error: 'server error' });
+        res.sendStatus(500);
       }
 
       res.clearCookie('connect.sid');
