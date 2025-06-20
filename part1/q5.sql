@@ -1,1 +1,1 @@
-INSERT INTO "Users"
+INSERT INTO "Users" value ()
