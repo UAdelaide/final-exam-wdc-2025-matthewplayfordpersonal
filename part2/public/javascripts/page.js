@@ -189,7 +189,7 @@ async function login(){
         const data = await res.json();
         if (data.user.role === 'owner') {
             window.location.href = '/owner-dashboard.html';
-        } else if (data.user.role) {
+        } else if (data.user.role === 'walker') {
             window.location.href = '/walker-dashboard.html';
         }
     } else {
