@@ -85,7 +85,8 @@ router.post('/logout', async (req, res) => {
 });
 
 router.get('/mydogs', async (req, res) => {
+  const userId = req.session.user_id;
   
 })
 
-module.exports = router;
+module.exports = rou
