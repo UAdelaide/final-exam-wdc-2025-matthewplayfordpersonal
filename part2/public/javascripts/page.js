@@ -190,6 +190,8 @@ async function login(){a
 
     if (data.user.role === 'owner') {
         window.location.href = '/owner-dashboard.html';
+    } else if (data.user.role) {
+        window.location.href = '/'
     }
 }
 
