@@ -42,6 +42,7 @@ router.get('/api/summary', function(req, res, next) {
   try {
 
   } catch (error) {
+    console.log(error);
     res.sendStatus(500).json({ error: 'an error occurred' });
   }
 });
