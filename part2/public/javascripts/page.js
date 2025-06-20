@@ -181,8 +181,10 @@ async function login(){a
         pass: document.getElementById('password').value
     };
 
-    const res = fetch('/users/login');
-    
+    const res = fetch('/users/login', {
+        
+    });
+
 
 }
 
