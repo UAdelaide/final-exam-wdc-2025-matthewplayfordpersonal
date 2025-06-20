@@ -205,13 +205,33 @@ async function login(){
     }
 }
 
-function logout(){
+async function logout(){
+    // get the values from the html inputs
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-    // Create AJAX Request
-    var xmlhttp = new XMLHttpRequest();
+    // create the fetch request to the login api
+    const res = await fetch('/api/users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            username: username,
+            password: password
+        })
+    });
 
-    // Open connection to server & send the post data using a POST request
-    xmlhttp.open("POST", "/users/logout", true);
-    xmlhttp.send();
-
+    // redirect to the respective page
+    if (res.ok) {
+        const data = await res.json();
+        if (data.user.role === 'owner') {
+            window.location.href = '/owner-dashboard.html';
+        } else if (data.user.role === 'walker') {
+            window.location.href = '/walker-dashboard.html';
+        }
+    } else {
+        // handle incorrect login details
+        alert('login failed');
+    }
 }
