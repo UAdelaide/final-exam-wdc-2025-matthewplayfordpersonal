@@ -8,9 +8,9 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/dogs', function(req, res, next) {
   try {
-    
+
   } catch (error) {
-    res.sendStatus(500);
+    res.sendStatus(500).json({'error: 'an error occurded'});
   }
 });
 
