@@ -186,8 +186,9 @@ async function login(){a
         body: JSON.stringify(user)
     });
 
-    const data = await res.json()
+    const data = await res.json();
 
+    if (data.user.role === 'owner')
 }
 
 function logout(){
