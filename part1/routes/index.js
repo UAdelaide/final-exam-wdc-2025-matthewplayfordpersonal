@@ -15,11 +15,19 @@ router.get('/api/dogs', function(req, res, next) {
 });
 
 router.get('/api/open', function(req, res, next) {
-  res.sendStatus(200);
+  try {
+
+  } catch (error) {
+    res.sendStatus(500);
+  }
 });
 
 router.get('/api/summary', function(req, res, next) {
-  res.sendStatus(200);
+  try {
+
+  } catch (error) {
+    res.sendStatus(500);
+  }
 });
 
 module.exports = router;
