@@ -2,4 +2,4 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'al
 INSERT INTO Users (username, email, password_hash, role) VALUES ('bobwalker', 'bob@example.com', 'hashed456', 'walker');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('carol123', 'carol@example.com', 'hashed789', 'owner');
 INSERT INTO Users (username, email, password_hash, role) VALUES ('jeffjeff', 'jeff@example.com', 'hashed91289219', 'owner');
-INSERT INTO Users (username, email, password_hash, role) VALUES ('notjefforbob', '@example.com', 'hashed123', 'owner');
+INSERT INTO Users (username, email, password_hash, role) VALUES ('notjefforbob', 'jeff323@example.com', 'hello', 'walker');
