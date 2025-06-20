@@ -206,20 +206,12 @@ async function login(){
 }
 
 async function logout(){
-    // get the values from the html inputs
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-
     // create the fetch request to the login api
-    const res = await fetch('/api/users/login', {
+    const res = await fetch('/api/users/logout', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            username: username,
-            password: password
-        })
+        }
     });
 
     // redirect to the respective page
