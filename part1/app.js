@@ -57,7 +57,8 @@ let db;
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'part1'
+      database: 'part1',
+      multipleStatements: true,
     });
 
     // Create a table if it doesn't exist
