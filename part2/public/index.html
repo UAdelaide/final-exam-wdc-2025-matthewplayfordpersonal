@@ -35,10 +35,11 @@
     const { createApp } = Vue;
     createApp({
       data() {
+        const 
       onMounted(async () => {
         async function getDogs() {
           try {
-            const res = await fetch('/api/walks');
+            const res = await fetch('/api/walks/dogs');
             walks.value = await res.json();
           } catch (err) {
             error.value = 'Failed to load walk requests';
