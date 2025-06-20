@@ -7,8 +7,8 @@ INSERT INTO Users (username, email, password_hash, role) VALUES ('notjefforbob',
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE username = 'alice123';
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Bella', 'small' FROM Users WHERE username = 'carol123';
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Jim', 'medium' FROM Users WHERE username = 'jeffjeff';
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, '', 'medium' FROM Users WHERE username = 'notjefforbob';
-INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Max', 'medium' FROM Users WHERE email = 'bob@example.com';
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Joe', 'large' FROM Users WHERE username = 'notjefforbob';
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id, 'Jacob', 'large' FROM Users WHERE email = 'bob@example.com';
 
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs WHERE name = 'Max';
 INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status, created_at) SELECT dog_id, '2025-06-10 08:00:00', 30, 'Parklands', 'open' FROM Dogs WHERE name = 'Max';
