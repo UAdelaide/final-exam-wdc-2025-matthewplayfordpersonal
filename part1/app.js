@@ -48,12 +48,16 @@ let db;
       password: '' // Set your MySQL root password
     });
 
+    // Create the database if it doesn't exist
+    await connection.query('CREATE DATABASE IF NOT EXISTS DogWalk');
+    await connection.end();
+
     // Now connect to the created database
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
       password: '',
-      database: 'DogWalkService'
+      database: 'part1'
     });
 
     // Create a table if it doesn't exist
