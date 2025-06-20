@@ -71,13 +71,13 @@ router.post('/logout', async (req, res) => {
         res.json({ error: 'server error' });
       }
 
-      res.sen(200);
-    })
+      res.sendStatus(200);
+    });
   } catch (error) {
     // catch any errors
     console.error(error);
-    res.status(500).json({ error: 'Login failed' });
+    res.status(500).json({ error: 'Logout failed' });
   }
-})
+});
 
 module.exports = router;
