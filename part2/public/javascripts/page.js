@@ -181,8 +181,8 @@ async function login(){
     const res = await fetch('/api/users/login', {
         method: 'POST',
         body: {
-            username,
-            password
+            username: username,
+            password: password,
         }
     });
 
