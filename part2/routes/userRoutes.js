@@ -68,7 +68,7 @@ router.post('/logout', async (req, res) => {
   try {
     req.session.destroy((error) => {
       if (error) {
-        res
+        res.json({ error: 'server error' })
       }
     })
   } catch (error) {
