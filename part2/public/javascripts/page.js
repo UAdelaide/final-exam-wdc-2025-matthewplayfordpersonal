@@ -205,20 +205,22 @@ async function login(){
     }
 }
 
-async function logout(){
-    // create the fetch request to the login api
-    const res = await fetch('/api/users/logout', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+router.post('/logout', async (req, res) => {
+  try {
+    // attempt to destroy the session
+    req.session.destroy((error) => {
+      // if there is an error return a 500
+      if (error) {
+        res.sendstatus(500);
+      }
 
-    // redirect to the respective page
-    if (res.ok) {
-        window.location.href = '/';
-    } else {
-        // handle incorrect login details
-        alert('login failed');
-    }
-}
+      // clear the cookie and return a 200
+      res.clearcookie('connect.sid');
+      res.sendstatus(200);
+    });
+  } catch (error) {
+    // catch any errors
+    console.error(error);
+    res.status(500).json({ error: 'logout failed' });
+  }
+});
