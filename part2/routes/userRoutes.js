@@ -39,7 +39,8 @@ router.get('/me', (req, res) => {
 router.post('/login', async (req, res) => {
   const { email, password } = req.body;
 
-  const [h] = await db.query(`SELECT `)
+  const [h] = await db.query(`SELECT * FROM Users`);
+  console.log(h);
 
   try {
     const [rows] = await db.query(`
