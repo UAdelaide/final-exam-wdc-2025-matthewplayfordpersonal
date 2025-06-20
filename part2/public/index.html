@@ -37,7 +37,12 @@
       data() {
       onMounted(async () => {
         async function getDogs() {
-         
+          try {
+            const res = await fetch('/api/users/dogs');
+            walks.value = await res.json();
+          } catch (err) {
+            error.value = 'Failed to load walk requests';
+          }
         }
       });
         return {
