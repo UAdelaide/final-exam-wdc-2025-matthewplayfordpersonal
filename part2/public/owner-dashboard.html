@@ -22,7 +22,7 @@
           <div class="mb-3">
             <label class="form-label">Dog ID</label>
               <select v-model="dogId">
-              <option disabled value="">-- Choose a dog --</option>
+              <option disabled>-- Choose a dog --</option>
               <option v-for="dog in myDogs" :key="dog.dog_id" :value="dog.dog_id">
                 {{ dog.name }}
               </option>
