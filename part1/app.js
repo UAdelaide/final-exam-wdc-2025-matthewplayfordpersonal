@@ -155,4 +155,6 @@ CREATE TABLE WalkRatings (
   }
 })();
 
+console.log('everything setup');
+
 module.exports = app;
