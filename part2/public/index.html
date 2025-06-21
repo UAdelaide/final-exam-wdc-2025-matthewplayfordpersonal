@@ -69,10 +69,12 @@
 
           const arr = []
           for (dog in data) {
-
+            const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
+            const data2 = await res.json();
+            arr.push({
+              
+            })
           }
-          const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
-          const data2 = await res.json();
           console.log(data, data2)
 
           dogs.value = {
