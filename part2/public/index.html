@@ -75,7 +75,9 @@
           for (const dog of data) {
             const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
             const data2 = await res2.json();
-            console.log(dog)
+
+            // to 
+            console.log(dog);
             arr.push({
               ...dog,
               img: data2.message
