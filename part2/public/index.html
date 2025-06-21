@@ -68,7 +68,7 @@
           const data = await res.json();
 
           const arr = []
-          for (dog in data) {
+          for (const dog in data) {
             const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
             const data2 = await res2.json();
             console.log(dog)
