@@ -70,6 +70,7 @@
           })
           const data = await res.json();
 
+          // to get an random dog image for each dog
           const arr = []
           for (const dog of data) {
             const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
