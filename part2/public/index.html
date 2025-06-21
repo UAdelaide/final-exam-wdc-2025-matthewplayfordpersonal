@@ -56,8 +56,10 @@
     const { createApp, ref, onMounted } = Vue;
     createApp({
       data() {
-        ref
+        // ref to store the state of the fetched dogs
         let dogs = ref([]);
+
+        // function to get the 
         async function getDogs() {
           try {
           const res = await fetch('/api/users/dogs', {
