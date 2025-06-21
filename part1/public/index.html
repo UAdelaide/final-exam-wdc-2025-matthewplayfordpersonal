@@ -40,7 +40,7 @@
         );
         const data = await response.json();
         console.log(data)
-        this.dogSrc = data;
+        this.dogSrc = data.message;
       },
     },
     mounted() {
