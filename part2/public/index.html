@@ -84,6 +84,7 @@
             })
           }
 
+          // assign the refs value to the temp array
           dogs.value = arr;
           } catch (err) {
             console.log(err)
@@ -91,6 +92,7 @@
           }
         }
       onMounted(async () => {
+        // run the function on dom mount
         getDogs();
       });
         return {
