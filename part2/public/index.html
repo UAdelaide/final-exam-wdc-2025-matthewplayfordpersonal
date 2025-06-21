@@ -67,12 +67,7 @@
           })
           const data = await res.json();
 
-          const res2 = await fetch('https://dog.ceo/api/breeds/image/random', {
-            method: 'GET',
-            headers: {
-            'Content-Type': 'application/json'
-            }
-          });
+          const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
           const data2 = await res.json();
           console.log(data, data2)
 
