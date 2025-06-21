@@ -45,7 +45,7 @@
           <td>{{ dog.size }}</td>
           <td>{{ dog.owner_username }}</td>
           <td>
-            <img :src="dog.img" alt="dog" />
+            <img height="30" :src="dog.img" alt="dog" />
           </td>
         </tr>
       </tbody>
@@ -68,7 +68,7 @@
           const data = await res.json();
 
           const arr = []
-          for (const dog in data) {
+          for (const dog of data) {
             const res2 = await fetch('https://dog.ceo/api/breeds/image/random');
             const data2 = await res2.json();
             console.log(dog)
