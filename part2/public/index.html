@@ -73,15 +73,11 @@
             const data2 = await res.json();
             arr.push({
               ...dog,
-              data2.message
+              img: data2.message
             })
           }
-          console.log(data, data2)
 
-          dogs.value = {
-            ...data,
-            img: data2.message,
-          };
+          dogs.value = arr;
           } catch (err) {
             console.log(err)
             error.value = 'Failed to load walk requests';
